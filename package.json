@@ -1,0 +1,57 @@
+{
+  "name": "glamar.js-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "history": "^5.0.0",
+    "preact": "^10.5.13",
+    "preact-router": "^3.2.1",
+    "react": "^17.0.2",
+    "sass": "^1.63.6",
+    "stats.js": "^0.17.0",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "build:prod": "env-cmd -f .env.prod craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "serve": "yarn build && serve -s build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "preact"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "singleQuote": true
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.29.0",
+    "eslint-config-preact": "^1.1.4",
+    "react-scripts": "4.0.3",
+    "serve": "^11.3.2"
+  }
+}
