@@ -5,14 +5,14 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   font-family: $primary-font;
   // background: #0f1616;
   background: $secondary;
   // color: $white-80;
-  background-size: 60% 100%;
-  background-repeat: no-repeat;
+  // background-size: 60% 100%;
+  // background-repeat: no-repeat;
   // background-position: 50%;
   $self: &;
 
@@ -290,140 +290,34 @@
 }
 
 .d-flex {
-  display: flex;
-  flex: 1;
-}
-.logo_container {
-  padding: 2rem;
-  margin: 1rem 0;
-}
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
-.bordered_color_btn {
-  border: 4px solid black;
-}
-
-.sidebar {
-  position: relative;
-  z-index: 1;
-  width: 0;
-  transition: width 0.5s ease-out;
-  width: 230px;
-
-  &__hamburger {
-    height: 64px;
-    padding: 24px;
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    background-color: $secondary;
-  }
-
-  &__body {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  &__title {
-    height: 64px;
-    display: flex;
-    align-items: center;
-  }
-  &__logo {
-    width: 100px;
-    margin-left: 80px;
-  }
-}
-.sidebar-item {
-  position: relative;
-  display: flex;
-  width: 100%;
-  color: white;
-  &-tabs__wrapper {
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-  }
-  &-tabs__item {
-    height: 64px;
-    display: flex;
-    align-items: center;
-    flex: none;
-    color: $primary;
-    padding: 24px;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    user-select: none;
-
-    &--selected {
-      // background-color: $black-40;
-      font-weight: bold;
-    }
-  }
-}
-.config__tabs-container {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  max-width: 600px;
-  margin-top: 2rem;
-}
-.config__tabs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
 
-  .tab_items {
-    min-height: 50px;
-    align-items: center;
-    display: flex;
-    color: $primary;
-    cursor: pointer;
-  }
-  .selected_tab {
-    font-weight: 700;
-    border-bottom: 4px solid;
-  }
-}
-
-.color_area {
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-between;
-  margin-left: 2.5rem;
-}
-
-@media screen and (max-width: 780px) {
-  body {
-    height: 100vh;
-  }
-  .container {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-
-    .container__tryon_console_wrapper {
-      width: 100%;
-    }
-
-    .container__frame_wrapper {
-      width: 100%;
-      // height: 50%;
-      max-height: 400px;
-      overflow: hidden;
-    }
-
-    .container__tabItem {
-      font-size: 1rem;
-    }
-
-    .container__colorPicker {
-      margin-top: 1.5rem;
+  .submit-btn {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
-  .logo_container {
-    margin: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  #container__frame_wrapper {
+    height: 500px;
+    width: 400px;
+  }
+  .sku-input {
+    height: 35px;
+    width: 200px;
+    text-align: left;
   }
 }
