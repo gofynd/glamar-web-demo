@@ -9,6 +9,20 @@ const TryonFrame = () => {
       'container__frame_wrapper',
       'Replace it with your GlamAR Activation key'
     );
+
+    window.GlamAR.addEventListener('*', (e) => {
+      switch (e) {
+        case 'loaded':
+          console.log('SDK loaded');
+          break;
+        case 'sku-applied':
+          console.log('SKU applied');
+          break;
+        case 'sku-failed':
+          console.log('SKU Failed to apply');
+          break;
+      }
+    });
   }, []);
 
   const handleSubmitClick = () => {

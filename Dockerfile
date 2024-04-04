@@ -1,25 +1,26 @@
-# build stage
-FROM node:15-alpine as build-stage
-RUN apk update && apk add python3 make alpine-sdk gcc g++ git build-base openssh openssl bash
+# Step 1: Use the official Node.js 14 image as the base image
+FROM node:14
+
+# Step 2: Set the working directory inside the container
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --legacy-peer-deps
-# COPY yarn.lock ./
-# RUN yarn
 
+# Step 3: Copy package.json and yarn.lock files to the container's working directory
+COPY package.json yarn.lock ./
+
+# Step 4: Install dependencies
+RUN yarn install
+
+# Step 5: Copy the rest of your app's source code from your host to your image filesystem
 COPY . .
-ENV NODE_ENV=production
-RUN npm run build:prod
 
-# serve stage
-FROM nginx:alpine
-RUN mkdir -p /srv/app/build
-WORKDIR /srv/app
-COPY config.js .
-COPY entrypoint.sh .
-COPY nginx.conf .
-COPY ci-test.sh .
-COPY --from=build-stage /app/tools .
-COPY --from=build-stage /app/build ./build
-ENTRYPOINT [ "sh", "entrypoint.sh" ]
+# Step 6: Build the React application
+RUN yarn build
+
+# Step 7: Install serve to serve the build directory
+RUN yarn global add serve
+
+# Step 8: Define the command to run your app using serve
+CMD ["serve", "-s", "build", "-l", "59089"]
+
+# Step 9: Expose the port the app runs on
+EXPOSE 59089
