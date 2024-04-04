@@ -19,7 +19,7 @@ Make sure you have installed all of the following prerequisites:
 To clone the repository:
 
 ```bash
-git clone git@github.com:gofynd/glamar-web-demo.git
+git clone https://github.com/gofynd/glamar-web-demo.git
 ```
 
 You can follow a thorough guide [here](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html#clone-a-repository)
