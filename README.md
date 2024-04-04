@@ -54,7 +54,7 @@ mkcert ssl/server-key.pem -cert-file ssl/server-cert.pem local.sdk.glamar.io
 127.0.0.1       local.sdk.glamar.io
 ```
 
-## How to Open /etc/hosts File
+**How to Open /etc/hosts File**
 
 - **Mac:** Use Terminal and type `sudo nano /etc/hosts`.
 - **Windows:** Open `hosts` file in Notepad as administrator from `C:\Windows\System32\drivers\etc`.
