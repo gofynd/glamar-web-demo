@@ -19,7 +19,7 @@ Make sure you have installed all of the following prerequisites:
 To clone the repository:
 
 ```bash
-$ git clone git@github.com:gofynd/glamar-web-demo.git
+git clone git@github.com:gofynd/glamar-web-demo.git
 ```
 
 You can follow a thorough guide [here](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html#clone-a-repository)
@@ -41,7 +41,7 @@ yarn install
    Use this command to generate SSL certificate
 
 ```bash
-$ mkcert -key-file key.pem -cert-file cert.pem "*.glamar.io"
+mkcert ssl/server-key.pem -cert-file ssl/server-cert.pem local.sdk.glamar.io
 ```
 
 3. Create a folder named **ssl** at root level of repository.
