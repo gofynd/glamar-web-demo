@@ -7,7 +7,8 @@ const TryonFrame = () => {
   useEffect(() => {
     window.GlamAR.init(
       'container__frame_wrapper',
-      'Replace it with your GlamAR Activation key'
+      'Replace it with your GlamAR Activation key',
+      { mode: 'private', platform: 'web' }
     );
 
     window.GlamAR.addEventListener('*', (e) => {
