@@ -8,9 +8,15 @@ const TryonFrame = () => {
     window.GlamAR.init(
       'container__frame_wrapper',
       'Replace it with your GlamAR Activation key',
-      { mode: 'private', platform: 'web' }
-    );
-
+        { platform: 'web',
+          mode: ’private’,
+          hideTryOnScreen: false,
+          theme: 'dark',
+          hideLiveCamera: false,
+          hideModelTryOn: false,
+          hideUploadMode: false 
+        });
+    
     window.GlamAR.addEventListener('*', (e) => {
       switch (e) {
         case 'loaded':
