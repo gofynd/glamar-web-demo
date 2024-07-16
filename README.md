@@ -91,7 +91,15 @@ import * as GlamAR from 'glamar-sdk';
 
 ```js
 // Pass in the id of a container and your API key
-GlamAR.init("GlamAR-module", <<YOUR_API_KEY>>);
+GlamAR.init('GlamAR-module', <<YOUR_ACCESS_KEY>>, {
+  platform: 'web',
+  mode: ’private’,
+  hideTryOnScreen: false,
+  theme: 'dark',
+  hideLiveCamera: false,
+  hideModelTryOn: false,
+  hideUploadMode: false 
+});
 GlamAR.addEventListener('opened', () =>
     GlamAR.applyMakeupBySku(<<SKU_ID>>)
 );
