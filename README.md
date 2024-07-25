@@ -101,14 +101,14 @@ GlamAR.init('GlamAR-module', <<YOUR_ACCESS_KEY>>, {
   hideUploadMode: false 
 });
 GlamAR.addEventListener('opened', () =>
-    GlamAR.applyMakeupBySku(<<SKU_ID>>)
+    GlamAR.applyBySku(<<SKU_ID>>)
 );
 ```
 
-> Call applyMakeupBySku on any event to apply the makeup
+> Call applyBySku on any event to apply the SKU
 
 ```html
-<button onclick="GlamAR.applyMakeupBySku(<<SKU_ID>>)">Apply Lip Color</button>
+<button onclick="GlamAR.applyBySku(<<SKU_ID>>)">Apply Lip Color</button>
 ```
 
 #### API Reference
@@ -123,7 +123,7 @@ GlamAR.addEventListener('opened', () =>
 
   <tr>
     <td><b>init</b></td>
-    <td>GlamAR.init(containerId, apiKey, openLiveMakeup) </td>
+    <td>GlamAR.init(containerId, apiKey, options) </td>
   </tr>
   <tr>
     <td></td>
@@ -132,7 +132,7 @@ GlamAR.addEventListener('opened', () =>
       <ul>
         <li> <b>containerId:</b> string, id of the div to mount the widget </li>
         <li> <b>apiKey:</b> string, api key </li> 
-        <li> <b>openLiveMakeup(optional):</b> boolean, whether to open widget in live mode. </li>
+        <li> <b>options(optional):</b> boolean, whether to open widget in live mode. </li>
       </ul>
     </td>
   </tr>
@@ -146,8 +146,8 @@ GlamAR.addEventListener('opened', () =>
   </tr>
 
   <tr>
-    <td><b>applyMakeupBySku</b></td>
-    <td>GlamAR.applyMakeupBySku(skuId, callback) </td>
+    <td><b>applyBySku</b></td>
+    <td>GlamAR.applyBySku(skuId, callback) </td>
   </tr>
   <tr>
     <td></td>
@@ -157,7 +157,7 @@ GlamAR.addEventListener('opened', () =>
         <li> <b>skuId:</b> number, a sku ID </li>
         <li> 
           <b>callback(optional):</b> 
-          function, fires after the makeup effect is applied 
+          function, fires after the VTO effect is applied 
         </li> 
       </ul>
     </td>
@@ -169,7 +169,7 @@ GlamAR.addEventListener('opened', () =>
   <tr>
     <td></td>
     <td>
-      Changes the makeup effect by the given sku ID, you could retrieve your sku information from admin panel.
+      Changes the VTO effect by the given SKU ID, you could retrieve your SKU information from the admin panel.
     </td>
   </tr>
   
